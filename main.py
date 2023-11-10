@@ -12,8 +12,10 @@ class Converter():
     def convert(self) -> float:
         if self.unit == "m":
             return self.value * self.MILE_IN_KILOMETER
-        elif self.unit == "km":
+        elif self.unit == "k":
             return self.value * self.KILOMETER_IN_MILE
+        else:
+            return 0.0
 
 def main():
     parser = argparse.ArgumentParser(
@@ -39,7 +41,7 @@ def main():
     
     if unit == "m":
         print(f"{value} mile(s) is {result} in kilometers.")
-    elif unit == "km":
+    elif unit == "k":
         print(f"{value} kilometer(s) is {result} in miles.")
     else:
         print("Could not convert. Try again.")
